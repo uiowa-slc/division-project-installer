@@ -2,11 +2,31 @@
 class Page extends SiteTree {
 
 	private static $db = array(
+		
 	);
 
 	private static $has_one = array(
 	);
 
+
+	private static $many_many = array (
+	);
+
+    private static $many_many_extraFields=array(
+      );
+
+    private static $plural_name = "Pages";
+
+	private static $defaults = array ();
+
+
+	public function getCMSFields(){
+		$f = parent::getCMSFields();
+		
+		return $f;
+	}
+
+	
 }
 class Page_Controller extends ContentController {
 
@@ -31,6 +51,13 @@ class Page_Controller extends ContentController {
 	public function init() {
 		parent::init();
 
+		// Note: you should use SS template require tags inside your templates
+		// instead of putting Requirements calls here.  However these are
+		// included so that our older themes still work
+
+   
 	}
 
+
+	
 }
