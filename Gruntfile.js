@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
   var globalConfig = {
-    themeDir: 'themes/imu5'
+    themeDir: 'themes/md'
   };
 
   // Project configuration.
@@ -18,9 +18,9 @@ module.exports = function(grunt) {
           '<%=globalConfig.themeDir %>/css/master.css' : '<%=globalConfig.themeDir %>/scss/master.scss'
         },                  // Target
         options: {              // Target options
-          style: 'compressed',
-          sourcemap: 'true',
-          loadPath: ['division-project/scss']
+          style: 'expanded',
+//          sourcemap: 'auto',
+          loadPath: ['division-project/scss', 'division-project/bower_components/foundation/scss/']
         }
       }
     },
@@ -29,7 +29,15 @@ module.exports = function(grunt) {
 
     concat: {
       js:{
-        src: ['<%=globalConfig.themeDir %>/js/*.js', 'division-project/js/*.js'],
+        src: ['division-project/bower_components/jquery/jquery.js',
+          'division-project/bower_components/jquery.equalheights/jquery.equalheights.js',
+          'division-project/bower_components/fitvids/jquery.fitvids.js',
+          'division-project/bower_components/flexslider/jquery.flexslider.js',
+          'division-project/bower_components/blazy/blazy.js',
+          'division-bar/js/division-bar.js',
+          'division-project/js/*.js',
+          '<%=globalConfig.themeDir %>/vendor/visible/jquery.visible.js',
+          '<%=globalConfig.themeDir %>/js/*.js' ],
         dest: '<%=globalConfig.themeDir %>/build/build.src.js'
       }
     },
@@ -71,6 +79,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-simple-watch');
 
   // Default task(s).
   // Note: order of tasks is very important
