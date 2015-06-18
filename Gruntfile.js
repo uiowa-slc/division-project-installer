@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
   var globalConfig = {
-    themeDir: 'themes/md'
+    themeDir: 'themes/division'
   };
 
   // Project configuration.
@@ -15,12 +15,12 @@ module.exports = function(grunt) {
     sass: {
       dist: { 
         files: {
-          '<%=globalConfig.themeDir %>/css/master.css' : '<%=globalConfig.themeDir %>/scss/master.scss'
+          '<%=globalConfig.themeDir %>/css/master.css' : '<%=globalConfig.themeDir %>/scss/master.scss',
+          '<%=globalConfig.themeDir %>/css/editor.css' : '<%=globalConfig.themeDir %>/scss/editor.scss'
         },                  // Target
         options: {              // Target options
-          style: 'expanded',
-//          sourcemap: 'auto',
-          loadPath: ['division-project/scss', 'division-project/bower_components/foundation/scss/']
+          style: 'compressed',
+          loadPath: ['division-project/scss', 'division-bar/scss']
         }
       }
     },
@@ -29,16 +29,9 @@ module.exports = function(grunt) {
 
     concat: {
       js:{
-        src: ['division-project/bower_components/jquery/jquery.js',
-          'division-project/bower_components/jquery.equalheights/jquery.equalheights.js',
-          'division-project/bower_components/fitvids/jquery.fitvids.js',
-          'division-project/bower_components/flexslider/jquery.flexslider.js',
-          'division-project/bower_components/blazy/blazy.js',
-          'division-bar/js/division-bar.js',
-          'division-project/js/*.js',
-          '<%=globalConfig.themeDir %>/vendor/visible/jquery.visible.js',
-          '<%=globalConfig.themeDir %>/js/*.js' ],
-        dest: '<%=globalConfig.themeDir %>/build/build.src.js'
+        src: [
+          'division-project/build/build.src.js'],
+        dest: '<%=globalConfig.themeDir %>/build/build-src.js'
       }
     },
 
@@ -51,7 +44,7 @@ module.exports = function(grunt) {
       },
       my_target:{
         files:{
-        '<%=globalConfig.themeDir %>/build/build.js': ['<%=globalConfig.themeDir %>/build/build.src.js'],
+        '<%=globalConfig.themeDir %>/build/build.js': ['<%=globalConfig.themeDir %>/build/build-src.js'],
         }
       }
     },
