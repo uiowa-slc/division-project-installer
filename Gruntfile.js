@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       dist: { 
         files: {
           '<%=globalConfig.themeDir %>/css/master.css' : '<%=globalConfig.themeDir %>/scss/master.scss',
-          '<%=globalConfig.themeDir %>/css/editor.css' : '<%=globalConfig.themeDir %>/scss/editor.scss'
+          '<%=globalConfig.themeDir %>/css/editor.css' : 'division-project/scss/editor.scss'
         },                  // Target
         options: {              // Target options
           style: 'compressed',
