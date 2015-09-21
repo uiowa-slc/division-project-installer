@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       js:{
         src: [
           'division-project/build/build.src.js'],
-        dest: '<%=globalConfig.themeDir %>/build/build-src.js'
+        dest: '<%=globalConfig.themeDir %>/build/build.src.js'
       }
     },
 
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
       },
       my_target:{
         files:{
-        '<%=globalConfig.themeDir %>/build/build.js': ['<%=globalConfig.themeDir %>/build/build-src.js'],
+        '<%=globalConfig.themeDir %>/build/build.js': ['<%=globalConfig.themeDir %>/build/build.src.js'],
         }
       }
     },
