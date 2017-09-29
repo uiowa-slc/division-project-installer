@@ -1,22 +1,27 @@
 {
-	"name": "silverstripe/installer",
-	"description": "The SilverStripe Framework Installer",
+    "name": "silverstripe/installer",
+    "description": "The SilverStripe Framework Installer",
     "minimum-stability": "dev",
-	"require": {
-		"php": ">=5.3.2",
-		"md/division-project": "2.0.x"
-		
+    "require": {
+        "php": ">=5.3.2",
+        "md/division-project": "2.0.x"
+        
 
-	},
-	"config": {
-		"process-timeout": 600	
-	},
-	
-	
+    },
+    "config": {
+        "process-timeout": 600  
+    },
+    
+    
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/StudentLifeMarketingAndDesign/division-project"
+      
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/StudentLifeMarketingAndDesign/division-analytics"
       
         },
         {
