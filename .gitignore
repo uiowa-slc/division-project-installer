@@ -43,6 +43,7 @@ tagfield/
 reports/
 siteconfig/
 secureassets/
+blog-sortable-categories/
 silverstripe-image-optionset/
 silverstripe-page-gallery/
 silverstripe-typekit/
@@ -58,11 +59,13 @@ multivaluefield/
 blocks/
 multivaluefield/
 display_logic
-activedirectory/
-cache/
-queuedjobs/
 npm-debug.log
-addressable/
+activedirectory/
+queuedjobs/
+MigrateUsersToAdTask.php
+cache
 fbpagefeed/
-nocaptcha
 nocaptcha.yml
+nocaptcha
+addressable
+linkable
